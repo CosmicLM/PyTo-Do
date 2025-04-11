@@ -1,11 +1,10 @@
 import sys
 import os
-from pyto_do.storage_processor import load_tasks, save_tasks
+from pyto_do.storage_processor import TASKS_FILE, load_tasks, save_tasks
 
 # Load tasks from file
 
-tasks = []
-
+tasks = TASKS_FILE
 # Add a task
 
 def add_task(task):
@@ -13,7 +12,7 @@ def add_task(task):
    save_tasks(tasks)
    print(f"Added task: '{task}'")
 
-# List tasks
+# List task elif choice == "5":
 def view_tasks():
    if not tasks:
       print("No tasks in your To-Do list")

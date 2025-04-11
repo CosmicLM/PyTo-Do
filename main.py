@@ -1,5 +1,6 @@
 from pyto_do.tasks import add_task, view_tasks, complete_task, delete_task
-       
+import time
+
 # Main program loop
 def menu():
     while True:
@@ -22,9 +23,10 @@ def menu():
             task_number = int(input("Enter task number: "))
             delete_task(task_number)
         elif choice == "5":
+            print("Tasks saved to file")
+            time.sleep(1)
             break
         else:
             print("Invalid choice")
-                
 if __name__ == "__main__":
     menu()
