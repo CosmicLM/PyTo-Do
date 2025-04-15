@@ -1,10 +1,10 @@
 import sys
 import os
-from pyto_do.storage_processor import TASKS_FILE, load_tasks, save_tasks
+from .storage_processor import TASKS_FILE, save_tasks, load_tasks
 
 # Load tasks from file
 
-tasks = TASKS_FILE
+tasks = load_tasks()
 # Add a task
 
 def add_task(task):
@@ -19,8 +19,8 @@ def view_tasks():
    else:
       print("To-Do List:")
    for i, task in enumerate(tasks, 1): # start numbering from 1
-        status = "✓" if task["completed"] else "✗"
-        print(f"{i+1}. {task['task']} - {status}") 
+       status = "✓" if task["completed"] else "✗"
+       print(f"{i+1}. {task['task']} - {status}") 
         
 # Mark task as completed
 def complete_task(task_number):
@@ -43,4 +43,6 @@ def delete_task(task_number):
         return
     save_tasks(tasks)
     print(f"Deleted task: '{task['task']}'")
+    
+
         

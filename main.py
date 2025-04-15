@@ -1,4 +1,4 @@
-from pyto_do.tasks import add_task, view_tasks, complete_task, delete_task
+from pytodo.tasks import add_task, view_tasks, complete_task, delete_task
 import time
 
 # Main program loop
