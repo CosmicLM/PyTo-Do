@@ -1,5 +1,5 @@
 import json
-
+import time
 # file to store tasks
 TASKS_FILE = "storage.json"
 
@@ -21,5 +21,7 @@ def load_tasks():
 def save_tasks(tasks):
     with open(TASKS_FILE, "w") as file:
         json.dump(tasks, file, indent=4) # indent for pretty printing
-    print("Tasks saved to file")
+        print("Saving tasks...")
+        time.sleep(1)
+        print("Tasks saved successfully.")
     
