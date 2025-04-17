@@ -18,7 +18,7 @@ def view_tasks():
       print("No tasks in your To-Do list")
    else:
       print("To-Do List:")
-   for i, task in enumerate(tasks, 1): # start numbering from 1
+   for i, task in enumerate(tasks, 0): # start numbering from 1
        status = "✓" if task["completed"] else "✗"
        print(f"{i+1}. {task['task']} - {status}") 
         
@@ -30,8 +30,7 @@ def complete_task(task_number):
         print("Invalid task number")
         return
     task["completed"] = True
-    save_tasks(tasks)
-    print(f"Completed task: '{task['task']}'")   
+    save_tasks(tasks)   
     
     # Remove task
     
