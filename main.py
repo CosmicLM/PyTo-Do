@@ -16,7 +16,10 @@ def clear():
 def display_banner(): # This function displays a welcome banner for the application.
     # Clear the console
     clear()
-    print("""welcome to... ░▒█▀▀█░█░░█░▀▀█▀▀░▄▀▀▄░░░░▒█▀▀▄░▄▀▀▄
+    print("""welcome to...
+          
+          
+              ░▒█▀▀█░█░░█░▀▀█▀▀░▄▀▀▄░░░░▒█▀▀▄░▄▀▀▄
               ░▒█▄▄█░█▄▄█░░▒█░░░█░░█░▀▀░▒█░▒█░█░░█
               ░▒█░░░░▄▄▄▀░░▒█░░░░▀▀░░░░░▒█▄▄█░░▀▀░""")
     print("""\n                                  
@@ -52,6 +55,16 @@ def get_task_number(): # This function prompts the user to enter a task number a
         except ValueError: # Handle non-integer input
             print("Invalid input. Please enter a valid number.")
             sleep(1)
+def KeyboardInterrupt(): # This function handles keyboard interrupts (Ctrl+C) gracefully.
+    print("\Thank you for Using PyTo-Do! Exiting...")
+    sleep(1)
+    clear()
+    os.system('cls' if os.name == 'nt' else 'clear')
+    exit(0)
+import signal
+signal.signal(signal.SIGINT, lambda s, f: KeyboardInterrupt()) # Register the signal handler
+# This function is used to handle the Ctrl+C keyboard interrupt.
+# It clears the console and exits the application gracefully.
 
 def menu(): # This function displays the main menu and handles user input.
     while True:
