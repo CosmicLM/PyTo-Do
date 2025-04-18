@@ -6,7 +6,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![GitHub stars](https://img.shields.io/github/stars/yourusername/to-do-app?style=social)
+![GitHub stars](https://img.shields.io/github/stars/CosmicLM/PyTo-Do?style=social)
 
 ![alt text](/assets/Py-ToDoLogo.png)
 
@@ -35,17 +35,17 @@ A **simple yet powerful** task management app built with pure Python. organize y
    python3 main.py
    ```
 
-## 🚀 Enhancement To-Do List
+##  Up Coming Features
+
+### Packaging
+- [ ] **Setting up .exe and .deb files**
 
 ### GUI/CLI Improvements
-- [ ] **Separate GUI/CLI implementations**  
-  *(Issue: #1 - No GUI)*  
-
+- [ ] **Separate GUI/CLI implementations** 
+- [ ] **GUI Version**
 ### Cloud Integration
 - [ ] **Import/Export tasks from third-party services** (Google Drive, Dropbox)  
-  *(Issue: #6)*  
-- [ ] **Sync with Google Tasks**  
-  *(Issue: #5)*  
+- [ ] **Sync with Google Tasks**
 
 ## 📜 License
 This project is licensed under the MIT License –  [LICENSE](https://github.com/CosmicLM/PyTo-Do/blob/main/LICENSE)
