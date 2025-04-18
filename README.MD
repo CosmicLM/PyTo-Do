@@ -6,7 +6,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![GitHub stars](https://img.shields.io/github/stars/yourusername/to-do-app?style=social)
+![GitHub stars](https://img.shields.io/github/stars/CosmicLM/PyTo-Do?style=social)
 
 ![alt text](/assets/Py-ToDoLogo.png)
 
