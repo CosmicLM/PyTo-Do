@@ -37,8 +37,8 @@ A **simple yet powerful** task management app built with pure Python. organize y
 
 ##  Up Coming Features
 
-###Packaging
--[ ] ** Setting up .exe and .deb files**
+### Packaging
+- [ ] **Setting up .exe and .deb files**
 
 ### GUI/CLI Improvements
 - [ ] **Separate GUI/CLI implementations** 
