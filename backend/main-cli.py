@@ -74,8 +74,8 @@ def menu(): # This function displays the main menu and handles user input.
         choice = input("Choose an option: ")
         if choice == "1": # Add a task
             task = input("Enter task: ")
-            duedate = input("(optional) If you would like to add a due date for the task, type the due date in DD/MM/YYYY format otherwise hit enter")
-            add_task(task, duedate)
+            due_date = input("(optional) If you would like to add a due date for the task, type the due date in DD/MM/YYYY format otherwise hit enter")
+            add_task(task, due_date)
         elif choice == "2": # View tasks
             clear()
             print("Viewing tasks")
