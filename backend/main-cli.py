@@ -79,7 +79,7 @@ def menu(): # This function displays the main menu and handles user input.
         elif choice == "2": # View tasks
             clear()
             print("Viewing tasks")
-            view_tasks() 
+            view_tasks(interaction=True)
         elif choice == "3": # Complete a task
             clear()
             print("Select which task to complete")
