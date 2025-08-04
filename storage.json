@@ -5,6 +5,15 @@
     },
     {
         "task": "test",
+        "completed": true
+    },
+    {
+        "task": "Go To School",
+        "completed": true,
+        "added": "2025-08-04 21:12"
+    },
+    {
+        "task": "hello",
         "completed": false
     }
 ]
