@@ -23,12 +23,12 @@ def read_requirements():
 setup(
     name="pytodo-cli",
     version="1.1.0",
-    author="CosmicLM",
-    author_email="contact@example.com",
+    author="mdnoyon9758",
+    author_email="mdnoyon9758@gmail.com",
     description="A simple yet powerful task management app built with pure Python",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/CosmicLM/PyTo-Do",
+    url="https://github.com/mdnoyon9758/PyTo-Do",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 4 - Beta",
@@ -57,8 +57,8 @@ setup(
     },
     keywords="todo, task-manager, cli, productivity",
     project_urls={
-        "Bug Reports": "https://github.com/CosmicLM/PyTo-Do/issues",
-        "Source": "https://github.com/CosmicLM/PyTo-Do",
-        "Documentation": "https://github.com/CosmicLM/PyTo-Do#readme",
+        "Bug Reports": "https://github.com/mdnoyon9758/PyTo-Do/issues",
+        "Source": "https://github.com/mdnoyon9758/PyTo-Do",
+        "Documentation": "https://github.com/mdnoyon9758/PyTo-Do#readme",
     },
 )

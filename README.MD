@@ -6,7 +6,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![GitHub stars](https://img.shields.io/github/stars/CosmicLM/PyTo-Do?style=social)
+![GitHub stars](https://img.shields.io/github/stars/mdnoyon9758/PyTo-Do?style=social)
 
 ![alt text](/assets/Py-ToDoLogo.png)
 
@@ -30,7 +30,7 @@ A **simple yet powerful** task management app built with pure Python. organize y
 ### Installation  
 1. Clone the repo:  
    ```bash
-   git clone https://github.com/CosmicLM/PyTo-Do
+   git clone https://github.com/mdnoyon9758/PyTo-Do
    cd PyTo-Do
    python3 main.py
    ```
@@ -48,7 +48,7 @@ A **simple yet powerful** task management app built with pure Python. organize y
 - [ ] **Sync with Google Tasks**
 
 ## 📜 License
-This project is licensed under the MIT License –  [LICENSE](https://github.com/CosmicLM/PyTo-Do/blob/main/LICENSE)
+This project is licensed under the MIT License –  [LICENSE](https://github.com/mdnoyon9758/PyTo-Do/blob/main/LICENSE)
 
 
 ## 💬 Feedback Welcome!
