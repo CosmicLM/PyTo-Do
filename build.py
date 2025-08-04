@@ -34,18 +34,24 @@ def build_executable():
     print("🔨 Building PyTo-Do executable...")
     
     # PyInstaller command
+    separator = ";" if os.name == "nt" else ":"
     cmd = [
         "pyinstaller",
         "--onefile",                      # Create a single executable file
         "--console",                      # Console application
-        "--name", "pytodo",               # Name of the executable
-        "--hidden-import=json",            # Handle missing imports
-        "--add-data", "storage.json;.",   # Include storage.json
-        "--add-data", "assets;assets",    # Include assets folder
-        "--add-data", "backend;backend",  # Include backend folder
-        "--icon", "assets/Py-ToDoLogo.png" if os.path.exists("assets/Py-ToDoLogo.png") else None,
-        "pytodo_standalone.py"
+        "--name", "PyTo-Do",              # Name of the executable
+        "--hidden-import=tkinter",        # Handle GUI imports
+        "--hidden-import=json",           # Handle JSON imports
+        "--hidden-import=datetime",       # Handle datetime imports
+        f"--add-data=storage.json{separator}.",   # Include storage.json
+        f"--add-data=assets{separator}assets",    # Include assets folder
+        f"--add-data=backend{separator}backend",  # Include backend folder
+        "main.py"  # Use main.py as entry point
     ]
+    
+    # Add icon if available
+    if os.path.exists("assets/Py-ToDoLogo.png"):
+        cmd.extend(["--icon", "assets/Py-ToDoLogo.png"])
     
     # Remove icon option if no icon file exists
     cmd = [arg for arg in cmd if arg is not None]
@@ -53,15 +59,17 @@ def build_executable():
     try:
         result = subprocess.run(cmd, check=True, capture_output=True, text=True)
         print("✓ Build completed successfully!")
-        print(f"📁 Executable location: {os.path.abspath('dist/pytodo.exe')}")
+        exe_name = "PyTo-Do.exe" if os.name == "nt" else "PyTo-Do"
+        print(f"📁 Executable location: {os.path.abspath(f'dist/{exe_name}')}")
         
         # Create a release folder
         release_dir = Path("release")
         release_dir.mkdir(exist_ok=True)
         
         # Copy executable to release folder
-        if os.path.exists("dist/pytodo.exe"):
-            shutil.copy2("dist/pytodo.exe", release_dir / "pytodo.exe")
+        exe_name = "PyTo-Do.exe" if os.name == "nt" else "PyTo-Do"
+        if os.path.exists(f"dist/{exe_name}"):
+            shutil.copy2(f"dist/{exe_name}", release_dir / exe_name)
             print(f"📦 Release package created in: {release_dir.absolute()}")
         
         return True
@@ -104,7 +112,8 @@ def main():
     if success:
         print("\n🎉 Build completed successfully!")
         print("📋 Usage:")
-        print("  - Run the executable: ./release/pytodo.exe")
+        exe_name = "PyTo-Do.exe" if os.name == "nt" else "PyTo-Do"
+        print(f"  - Run the executable: ./release/{exe_name}")
         print("  - Clean build files: python build.py clean")
     else:
         print("\n❌ Build failed. Please check the error messages above.")
