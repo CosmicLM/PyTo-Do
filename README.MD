@@ -25,15 +25,53 @@ A **simple yet powerful** task management app built with pure Python. organize y
 ## 🚀 Getting Started  
 
 ### Prerequisites  
-- Python 3.8+    
+- Python 3.8+ (Required)
+- Git (for cloning)
+- tkinter (usually included with Python)
 
-### Installation  
-1. Clone the repo:  
-   ```bash
-   git clone https://github.com/mdnoyon9758/PyTo-Do
-   cd PyTo-Do
-   python3 main.py
-   ```
+### 📥 Installation Options
+
+#### Option 1: Quick Install (Recommended)
+```bash
+# Clone and auto-install
+git clone https://github.com/mdnoyon9758/PyTo-Do
+cd PyTo-Do
+python install.py
+```
+
+#### Option 2: Manual Installation
+```bash
+# Clone the repository
+git clone https://github.com/mdnoyon9758/PyTo-Do
+cd PyTo-Do
+
+# Run PyTo-Do CLI
+python main.py
+
+# Or run GUI version
+python gui.py
+
+# Or run Cloud Sync
+python cloud_sync.py
+```
+
+#### Option 3: Download Executable (No Python needed)
+1. Go to [Releases](https://github.com/mdnoyon9758/PyTo-Do/releases)
+2. Download the executable for your platform:
+   - `PyTo-Do.exe` (Windows)
+   - `PyTo-Do` (Linux)
+3. Run the executable directly
+
+### 🔧 Build Your Own Executable
+```bash
+# Install build dependencies
+pip install pyinstaller
+
+# Build executable
+python build.py
+
+# Find your executable in ./release/
+```
 
 ##  Up Coming Features
 
