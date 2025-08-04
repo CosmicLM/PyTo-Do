@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
 """
-PyTo-Do GUI - Graphical User Interface version
+PyTo-Do GUI - Modern Graphical User Interface
+Originally created by CosmicLM | Enhanced by mdnoyon9758
 Built with tkinter for cross-platform compatibility
 """
 
 import tkinter as tk
-from tkinter import ttk, messagebox, simpledialog
+from tkinter import ttk, messagebox, simpledialog, font
 import json
 import os
 from datetime import datetime
+import sys
 
 class PyToDoGUI:
     def __init__(self, root):

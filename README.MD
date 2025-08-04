@@ -4,6 +4,8 @@
 
 #  PyTo-Do ✅
 
+> **Originally created by [CosmicLM](https://github.com/CosmicLM/PyTo-Do)** | Enhanced and maintained by [mdnoyon9758](https://github.com/mdnoyon9758/PyTo-Do)
+
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![GitHub stars](https://img.shields.io/github/stars/mdnoyon9758/PyTo-Do?style=social)

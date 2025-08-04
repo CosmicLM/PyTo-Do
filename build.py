@@ -33,50 +33,94 @@ def build_executable():
     
     print("🔨 Building PyTo-Do executable...")
     
-    # PyInstaller command
+    # Ask user for build type
+    print("Choose build type:")
+    print("1. GUI Application (modern_gui.py) - Recommended")
+    print("2. CLI Application (main.py)")
+    print("3. Both CLI and GUI")
+    
+    choice = input("Enter choice (1-3): ").strip()
+    
+    # Default to GUI if invalid choice
+    if choice not in ['1', '2', '3']:
+        choice = '1'
+        print("Invalid choice, defaulting to GUI application")
+    
     separator = ";" if os.name == "nt" else ":"
-    cmd = [
-        "pyinstaller",
-        "--onefile",                      # Create a single executable file
-        "--console",                      # Console application
-        "--name", "PyTo-Do",              # Name of the executable
-        "--hidden-import=tkinter",        # Handle GUI imports
-        "--hidden-import=json",           # Handle JSON imports
-        "--hidden-import=datetime",       # Handle datetime imports
-        f"--add-data=storage.json{separator}.",   # Include storage.json
-        f"--add-data=assets{separator}assets",    # Include assets folder
-        f"--add-data=backend{separator}backend",  # Include backend folder
-        "main.py"  # Use main.py as entry point
-    ]
     
-    # Add icon if available
-    if os.path.exists("assets/Py-ToDoLogo.png"):
-        cmd.extend(["--icon", "assets/Py-ToDoLogo.png"])
+    builds = []
+    if choice in ['1', '3']:  # GUI build
+        gui_cmd = [
+            "pyinstaller",
+            "--onefile",
+            "--windowed",                     # No console window for GUI
+            "--name", "PyTo-Do-GUI",
+            "--hidden-import=tkinter",
+            "--hidden-import=tkinter.ttk",
+            "--hidden-import=tkinter.messagebox",
+            "--hidden-import=tkinter.simpledialog",
+            "--hidden-import=tkinter.filedialog",
+            "--hidden-import=json",
+            "--hidden-import=datetime",
+            f"--add-data=storage.json{separator}.",
+            f"--add-data=assets{separator}assets",
+            "modern_gui.py"
+        ]
+        builds.append(("GUI", gui_cmd))
     
-    # Remove icon option if no icon file exists
-    cmd = [arg for arg in cmd if arg is not None]
+    if choice in ['2', '3']:  # CLI build
+        cli_cmd = [
+            "pyinstaller",
+            "--onefile",
+            "--console",
+            "--name", "PyTo-Do-CLI",
+            "--hidden-import=json",
+            "--hidden-import=datetime",
+            f"--add-data=storage.json{separator}.",
+            f"--add-data=assets{separator}assets",
+            f"--add-data=backend{separator}backend",
+            "main.py"
+        ]
+        builds.append(("CLI", cli_cmd))
     
-    try:
-        result = subprocess.run(cmd, check=True, capture_output=True, text=True)
-        print("✓ Build completed successfully!")
-        exe_name = "PyTo-Do.exe" if os.name == "nt" else "PyTo-Do"
-        print(f"📁 Executable location: {os.path.abspath(f'dist/{exe_name}')}")
-        
-        # Create a release folder
+    # Add icon to builds if available
+    icon_path = "assets/Py-ToDoLogo.png"
+    if os.path.exists(icon_path):
+        for i, (build_type, cmd) in enumerate(builds):
+            cmd.extend(["--icon", icon_path])
+            builds[i] = (build_type, cmd)
+    
+    success_count = 0
+    total_builds = len(builds)
+    
+    # Execute builds
+    for build_type, cmd in builds:
+        print(f"\n🔨 Building {build_type} version...")
+        try:
+            result = subprocess.run(cmd, check=True, capture_output=True, text=True)
+            print(f"✓ {build_type} build completed successfully!")
+            success_count += 1
+        except subprocess.CalledProcessError as e:
+            print(f"❌ {build_type} build failed: {e}")
+            if e.stderr:
+                print(f"Error output: {e.stderr}")
+    
+    if success_count > 0:
+        # Create release folder and copy executables
         release_dir = Path("release")
         release_dir.mkdir(exist_ok=True)
         
-        # Copy executable to release folder
-        exe_name = "PyTo-Do.exe" if os.name == "nt" else "PyTo-Do"
-        if os.path.exists(f"dist/{exe_name}"):
-            shutil.copy2(f"dist/{exe_name}", release_dir / exe_name)
-            print(f"📦 Release package created in: {release_dir.absolute()}")
+        # Copy built executables
+        for exe_file in Path("dist").glob("*"):
+            if exe_file.is_file():
+                shutil.copy2(exe_file, release_dir / exe_file.name)
+                print(f"📦 Copied {exe_file.name} to release folder")
         
+        print(f"\n🎉 {success_count}/{total_builds} builds completed successfully!")
+        print(f"📁 Executables available in: {release_dir.absolute()}")
         return True
-        
-    except subprocess.CalledProcessError as e:
-        print(f"❌ Build failed: {e}")
-        print(f"Error output: {e.stderr}")
+    else:
+        print(f"\n❌ All builds failed.")
         return False
 
 def clean_build():

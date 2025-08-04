@@ -14,6 +14,11 @@
     },
     {
         "task": "hello",
-        "completed": false
+        "completed": true
+    },
+    {
+        "task": "DO SOME USELESS WORK",
+        "completed": true,
+        "added": "2025-08-04 22:18"
     }
 ]
