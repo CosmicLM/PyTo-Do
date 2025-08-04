@@ -35,21 +35,22 @@ def build_executable():
     
     # Ask user for build type
     print("Choose build type:")
-    print("1. GUI Application (modern_gui.py) - Recommended")
+    print("1. Modern GUI Application (frontend/modern_gui.py) - Recommended")
     print("2. CLI Application (main.py)")
-    print("3. Both CLI and GUI")
+    print("3. Launcher (all interfaces) - Best option")
+    print("4. Both CLI and GUI")
     
     choice = input("Enter choice (1-3): ").strip()
     
-    # Default to GUI if invalid choice
-    if choice not in ['1', '2', '3']:
-        choice = '1'
-        print("Invalid choice, defaulting to GUI application")
+    # Default to launcher if invalid choice
+    if choice not in ['1', '2', '3', '4']:
+        choice = '3'
+        print("Invalid choice, defaulting to launcher application")
     
     separator = ";" if os.name == "nt" else ":"
     
     builds = []
-    if choice in ['1', '3']:  # GUI build
+    if choice == '1':  # Modern GUI build
         gui_cmd = [
             "pyinstaller",
             "--onefile",
@@ -64,11 +65,70 @@ def build_executable():
             "--hidden-import=datetime",
             f"--add-data=storage.json{separator}.",
             f"--add-data=assets{separator}assets",
-            "modern_gui.py"
+            f"--add-data=frontend{separator}frontend",
+            f"--add-data=backend{separator}backend",
+            "frontend/modern_gui.py"
         ]
-        builds.append(("GUI", gui_cmd))
+        builds.append(("Modern GUI", gui_cmd))
     
-    if choice in ['2', '3']:  # CLI build
+    if choice == '2':  # CLI build
+        cli_cmd = [
+            "pyinstaller",
+            "--onefile",
+            "--console",
+            "--name", "PyTo-Do-CLI",
+            "--hidden-import=json",
+            "--hidden-import=datetime",
+            f"--add-data=storage.json{separator}.",
+            f"--add-data=assets{separator}assets",
+            f"--add-data=backend{separator}backend",
+            "main.py"
+        ]
+        builds.append(("CLI", cli_cmd))
+    
+    if choice == '3':  # Launcher build
+        launcher_cmd = [
+            "pyinstaller",
+            "--onefile",
+            "--console",
+            "--name", "PyTo-Do-Launcher",
+            "--hidden-import=tkinter",
+            "--hidden-import=tkinter.ttk",
+            "--hidden-import=tkinter.messagebox",
+            "--hidden-import=tkinter.simpledialog",
+            "--hidden-import=tkinter.filedialog",
+            "--hidden-import=json",
+            "--hidden-import=datetime",
+            f"--add-data=storage.json{separator}.",
+            f"--add-data=assets{separator}assets",
+            f"--add-data=frontend{separator}frontend",
+            f"--add-data=backend{separator}backend",
+            "launcher.py"
+        ]
+        builds.append(("Launcher", launcher_cmd))
+    
+    if choice == '4':  # Both CLI and GUI
+        # Add both builds
+        gui_cmd = [
+            "pyinstaller",
+            "--onefile",
+            "--windowed",
+            "--name", "PyTo-Do-GUI",
+            "--hidden-import=tkinter",
+            "--hidden-import=tkinter.ttk",
+            "--hidden-import=tkinter.messagebox",
+            "--hidden-import=tkinter.simpledialog",
+            "--hidden-import=tkinter.filedialog",
+            "--hidden-import=json",
+            "--hidden-import=datetime",
+            f"--add-data=storage.json{separator}.",
+            f"--add-data=assets{separator}assets",
+            f"--add-data=frontend{separator}frontend",
+            f"--add-data=backend{separator}backend",
+            "frontend/modern_gui.py"
+        ]
+        builds.append(("Modern GUI", gui_cmd))
+        
         cli_cmd = [
             "pyinstaller",
             "--onefile",

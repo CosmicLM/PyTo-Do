@@ -48,17 +48,21 @@ A **simple yet powerful** task management app built with pure Python. organize y
 git clone https://github.com/mdnoyon9758/PyTo-Do
 cd PyTo-Do
 
-# Run Modern GUI (Recommended)
-python modern_gui.py
+# Launch interface selector (Recommended)
+python launcher.py
 
-# Or run CLI version
+# Or run specific interfaces:
+# Modern GUI
+python frontend/modern_gui.py
+
+# CLI version
 python main.py
 
-# Or run Classic GUI
-python gui.py
+# Classic GUI
+python frontend/gui.py
 
-# Or run Cloud Sync
-python cloud_sync.py
+# Cloud Sync
+python frontend/cloud_sync.py
 ```
 
 ### 🔧 Build Your Own Executable

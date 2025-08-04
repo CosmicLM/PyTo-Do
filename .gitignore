@@ -23,8 +23,8 @@ Thumbs.db
 *.log
 
 
-# Executable files
-release/*.exe
+# Build artifacts (exclude from git)
+# release/*.exe
 
 # User data files
 storage.json
