@@ -1,17 +1,30 @@
+# Virtual environments
+.env
+.envrc
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Python cache
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+
 # Build artifacts
 build/
 dist/
 *.spec
-__pycache__/
-*.pyc
-*.pyo
 *.egg-info/
-
-# IDE files
-.vscode/
-.idea/
-*.swp
-*.swo
 
 # OS files
 .DS_Store
@@ -22,13 +35,6 @@ Thumbs.db
 *.temp
 *.log
 
-
-# Build artifacts (exclude from git)
-# release/*.exe
-
 # User data files
 storage.json
-
-# Python cache
-*.pyc
-__pycache__/
+**/storage.json

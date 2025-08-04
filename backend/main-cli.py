@@ -73,11 +73,13 @@ def menu(): # This function displays the main menu and handles user input.
         print("1. Add task\n2. View tasks\n3. Complete task\n4. Delete task\n5. Exit")
         choice = input("Choose an option: ")
         if choice == "1": # Add a task
-            add_task(input("Enter task: "))
+            task = input("Enter task: ")
+            due_date = input("(optional) If you would like to add a due date for the task, type the due date in DD/MM/YYYY format otherwise hit enter")
+            add_task(task, due_date)
         elif choice == "2": # View tasks
             clear()
             print("Viewing tasks")
-            view_tasks() 
+            view_tasks(interaction=True)
         elif choice == "3": # Complete a task
             clear()
             print("Select which task to complete")
