@@ -12,17 +12,21 @@
 
 ![alt text](/assets/Py-ToDoLogo.png)
 
-A **simple yet powerful** task management app built with pure Python. organize your tasks effortlessly with a clean CLI and flawless saving!
+A **simple yet powerful** task management app built with pure Python. organize your tasks effortlessly with a beautiful modern GUI and reliable CLI!
 
 <p align="center">
   <img src="/assets/image.png">
 </p>
 
 ## ✨ Features  
-✔ **Add, Delete, and Mark Tasks** – Full CRUD functionality.  
-✔ **Persistent Storage** – Tasks save to `storage.json' automatically.
-✔ **Clean & Intuitive CLI** – Built Command Line, for the best experience.
-✔ **No Bloat** – Lightweight and dependency-free.  
+✔ **Modern GUI Interface** – Beautiful, responsive design with dark sidebar and clean layout  
+✔ **Task Filtering** – View All, Pending, or Completed tasks with one click  
+✔ **Real-time Statistics** – Live counters for total, completed, and pending tasks  
+✔ **Export/Import** – Backup and restore your tasks easily  
+✔ **Full CRUD Operations** – Add, edit, complete, and delete tasks seamlessly  
+✔ **Persistent Storage** – Tasks save to `storage.json` automatically  
+✔ **Cross-platform** – Works on Windows, Linux, and macOS  
+✔ **No Dependencies** – Uses only Python standard library (tkinter)
 
 ## 🚀 Getting Started  
 
@@ -50,19 +54,22 @@ cd PyTo-Do
 # Run PyTo-Do CLI
 python main.py
 
-# Or run GUI version
+# Run Modern GUI (Recommended)
+python modern_gui.py
+
+# Or run Classic GUI
 python gui.py
 
 # Or run Cloud Sync
 python cloud_sync.py
 ```
 
-#### Option 3: Download Executable (No Python needed)
+#### Option 3: Download Executable (No Python needed) 🎯
 1. Go to [Releases](https://github.com/mdnoyon9758/PyTo-Do/releases)
-2. Download the executable for your platform:
-   - `PyTo-Do.exe` (Windows)
-   - `PyTo-Do` (Linux)
-3. Run the executable directly
+2. Download the modern GUI executable:
+   - `PyTo-Do-GUI.exe` (Windows) - **10MB single file**
+   - `PyTo-Do-GUI` (Linux) - Coming soon
+3. Double-click to run - No installation required!
 
 ### 🔧 Build Your Own Executable
 ```bash

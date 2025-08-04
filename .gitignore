@@ -22,9 +22,9 @@ Thumbs.db
 *.temp
 *.log
 
-# Release artifacts (keep in repo but ignore local builds)
-# release/
 
+# Executable files
+release/*.exe
 # Python cache
 *.pyc
 __pycache__/
