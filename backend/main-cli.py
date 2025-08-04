@@ -56,7 +56,7 @@ def get_task_number(): # This function prompts the user to enter a task number a
             print("Invalid input. Please enter a valid number.")
             sleep(1)
 def KeyboardInterrupt(): # This function handles keyboard interrupts (Ctrl+C) gracefully.
-    print("\Thank you for Using PyTo-Do! Exiting...")
+    print("\nThank you for Using PyTo-Do! Exiting...")
     sleep(1)
     clear()
     os.system('cls' if os.name == 'nt' else 'clear')
