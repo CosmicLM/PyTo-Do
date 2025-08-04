@@ -25,6 +25,10 @@ Thumbs.db
 
 # Executable files
 release/*.exe
+
+# User data files
+storage.json
+
 # Python cache
 *.pyc
 __pycache__/
