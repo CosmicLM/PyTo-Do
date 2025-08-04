@@ -14,13 +14,13 @@ def add_task(task):
 
 # List task elif choice == "5":
 def view_tasks():
-   if not tasks:
-      print("No tasks in your To-Do list")
-   else:
-      print("To-Do List:")
-   for i, task in enumerate(tasks, 0): # start numbering from 1
-       status = "✓" if task["completed"] else "✗"
-       print(f"{i+1}. {task['task']} - {status}") 
+    if not tasks:
+        print("No tasks in your To-Do list")
+    else:
+        print("To-Do List:")
+        for i, task in enumerate(tasks, 0): # start numbering from 1
+            status = "✓" if task["completed"] else "✗"
+            print(f"{i+1}. {task['task']} - {status}")
         
 # Mark task as completed
 def complete_task(task_number):

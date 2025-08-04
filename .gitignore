@@ -1,0 +1,34 @@
+# Build artifacts
+build/
+dist/
+*.spec
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+
+# Build artifacts (exclude from git)
+# release/*.exe
+
+# User data files
+storage.json
+
+# Python cache
+*.pyc
+__pycache__/
