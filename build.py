@@ -40,7 +40,7 @@ def build_executable():
     print("3. Launcher (all interfaces) - Best option")
     print("4. Both CLI and GUI")
     
-    choice = input("Enter choice (1-3): ").strip()
+    choice = input("Enter choice (1-4): ").strip()
     
     # Default to launcher if invalid choice
     if choice not in ['1', '2', '3', '4']:
