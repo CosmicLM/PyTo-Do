@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 PyTo-Do Launcher - Choose your interface
 Originally created by CosmicLM | Enhanced by mdnoyon9758

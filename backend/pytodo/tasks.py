@@ -8,7 +8,6 @@ tasks = load_tasks()
 # Add a task
 
 def add_task(task):
-   tasks.append({"task": task, "completed": False})
    save_tasks(tasks)
    print(f"Added task: '{task}'")
 
