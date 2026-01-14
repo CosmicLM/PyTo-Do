@@ -74,18 +74,6 @@ python build.py
 # Find your executable in ./release/
 ```
 
-##  Up Coming Features
-
-### Packaging
-- [ ] **Setting up .exe and .deb files**
-
-### GUI/CLI Improvements
-- [ ] **Separate GUI/CLI implementations** 
-- [ ] **GUI Version**
-### Cloud Integration
-- [ ] **Import/Export tasks from third-party services** (Google Drive, Dropbox)  
-- [ ] **Sync with Google Tasks**
-
 ## License
 This project is licensed under the MIT License –  [LICENSE](https://github.com/CosmicLM/PyTo-Do/blob/main/LICENSE)
 
