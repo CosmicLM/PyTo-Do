@@ -16,7 +16,7 @@ A **simple yet powerful** task management app built with pure Python. organize y
   <img src="/assets/image.png">
 </p>
 
-## ✨ Features  
+##  Features  
 ✔ **Modern GUI Interface** – Beautiful, responsive design with dark sidebar and clean layout  
 ✔ **Task Filtering** – View All, Pending, or Completed tasks with one click  
 ✔ **Real-time Statistics** – Live counters for total, completed, and pending tasks  
@@ -26,16 +26,16 @@ A **simple yet powerful** task management app built with pure Python. organize y
 ✔ **Cross-platform** – Works on Windows, Linux, and macOS  
 ✔ **No Dependencies** – Uses only Python standard library (tkinter)
 
-## 🚀 Getting Started  
+## Getting Started  
 
 ### Prerequisites  
 - Python 3.8+ (Required)
 - Git (for cloning)
 - tkinter (usually included with Python)
 
-### 📥 Installation Options
+### Installation Options
 
-#### Option 1: Download Executable (Easiest) 🎯
+#### Option 1: Download Executable (Easiest)
 1. Go to [Releases](https://github.com/CosmicLM/PyTo-Do/releases)
 2. Download `PyTo-Do-GUI.exe` (Windows) - **10MB single file**
 3. Double-click to run - No installation required!
@@ -86,9 +86,9 @@ python build.py
 - [ ] **Import/Export tasks from third-party services** (Google Drive, Dropbox)  
 - [ ] **Sync with Google Tasks**
 
-## 📜 License
+## License
 This project is licensed under the MIT License –  [LICENSE](https://github.com/CosmicLM/PyTo-Do/blob/main/LICENSE)
 
 
-## 💬 Feedback Welcome!
+## Feedback Welcome!
 Found a bug? Want a feature? Open an issue or fork and improve!
